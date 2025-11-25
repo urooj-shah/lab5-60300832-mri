@@ -6,12 +6,16 @@ on:
       - lab5_mlops_tumor_detection
   workflow_dispatch:
 
+permissions:
+  id-token: write     # REQUIRED for OIDC login
+  contents: read
+
 jobs:
   run-aml-pipeline-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -19,23 +23,20 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install Azure ML SDK
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install azure-ai-ml azure-identity joblib pandas numpy scikit-learn pillow
 
-      - name: Login to Azure with service principal
+      - name: Login to Azure using OIDC (service principal)
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Run training pipeline
-        run: |
-          python src/pipeline_job.py
+      - name: Run Azure ML training pipeline
+        run: python src/pipeline_job.py
 
-      - name: Deploy latest model
-        run: |
-          python scripts/deploy_endpoint.py
+      - name: Deploy latest model to endpoint
+        run: python scripts/deploy_endpoint.py
