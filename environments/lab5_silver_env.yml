@@ -1,0 +1,11 @@
+$schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
+
+name: lab5_silver_env
+version: 1
+description: "Environment for Lab 5 Silver feature extraction"
+
+# Base image to use
+image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04
+
+# Conda environment file (path is relative to THIS yaml file)
+conda_file: conda.yml

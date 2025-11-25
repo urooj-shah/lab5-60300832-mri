@@ -1,0 +1,11 @@
+name: lab5_silver_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - scikit-image=0.19.3
+  - pandas
+  - pyarrow
+  - numpy

@@ -1,0 +1,26 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+
+name: tumor_feature_retrieval
+version: 2
+display_name: Tumor Feature Retrieval and Split
+type: command
+
+inputs:
+  features_parquet:
+    type: uri_file
+
+outputs:
+  train_parquet:
+    type: uri_file
+  test_parquet:
+    type: uri_file
+
+code: ../src
+
+environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
+
+command: >-
+  python feature_retrieval.py
+  --features_parquet ${{inputs.features_parquet}}
+  --train_parquet ${{outputs.train_parquet}}
+  --test_parquet ${{outputs.test_parquet}}

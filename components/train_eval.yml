@@ -1,0 +1,33 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+
+name: tumor_train_and_evaluate
+version: 2
+display_name: Tumor Training & Evaluation
+type: command
+
+inputs:
+  train_parquet:
+    type: uri_file
+  test_parquet:
+    type: uri_file
+  selected_features_json:
+    type: uri_file
+  feature_set_version:
+    type: string
+    default: "4"
+
+outputs:
+  output_dir:
+    type: uri_folder
+
+code: ../src
+
+environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
+
+command: >-
+  python train_and_evaluate.py
+  --train_parquet ${{inputs.train_parquet}}
+  --test_parquet ${{inputs.test_parquet}}
+  --selected_features_json ${{inputs.selected_features_json}}
+  --feature_set_version ${{inputs.feature_set_version}}
+  --output_dir ${{outputs.output_dir}}

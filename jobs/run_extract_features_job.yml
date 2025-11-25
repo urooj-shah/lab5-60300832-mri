@@ -1,0 +1,26 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+
+experiment_name: lab5_silver_extraction
+
+# This tells Azure ML to upload your repo (one level up from jobs/ folder)
+code: ../
+
+command: >-
+  python src/extract_features.py
+  --input_data ${{inputs.input_data}}
+  --output_parquet ${{outputs.output_parquet}}
+
+environment: azureml:lab5_silver_env:2
+
+inputs:
+  input_data:
+    type: uri_folder
+    path: azureml:tumor_images_raw:1
+
+outputs:
+  output_parquet:
+    type: uri_folder
+    mode: rw_mount
+
+# Use your existing compute cluster from last lab
+compute: azureml:cpu-cluster

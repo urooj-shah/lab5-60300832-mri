@@ -1,0 +1,28 @@
+$schema: http://azureml/sdk-2-0/Featureset.json
+
+name: tumor_features
+version: "5"
+
+specification:
+  path: .
+
+entities:
+  - azureml:tumor_image:1
+
+materialization_settings:
+  offline_enabled: true
+
+  # THIS tells Azure which VM size to use
+  compute_resource:
+    instance_type: Standard_DS3_v2
+
+  # THIS is the Spark config
+  spark_configuration:
+    spark.driver.cores: 1
+    spark.driver.memory: "4g"
+    spark.executor.instances: 2
+    spark.executor.cores: 1
+    spark.executor.memory: "4g"
+    runtime_version: 3.4
+
+stage: Development

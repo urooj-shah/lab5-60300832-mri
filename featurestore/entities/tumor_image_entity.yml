@@ -1,0 +1,6 @@
+$schema: https://azuremlschemas.azureedge.net/latest/featurestoreEntity.schema.json
+name: tumor_image
+version: "1"
+index_columns:
+  - name: image_id
+    type: string

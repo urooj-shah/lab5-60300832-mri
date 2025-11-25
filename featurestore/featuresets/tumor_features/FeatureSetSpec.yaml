@@ -1,0 +1,251 @@
+# featurestore/featuresets/tumor_features/FeatureSetSpec.yaml
+
+# (schema line is optional but nice to have)
+$schema: https://azuremlschemas.azureedge.net/latest/featuresetSpec.schema.json
+
+# Where the precomputed features live
+source:
+  type: parquet
+  path: azureml:frosty_office_x3xj0lvz6d_output_data_output_parquet:1
+  timestamp_column:
+    name: image_id
+
+
+# All feature columns (no image_id, no label)
+features:
+  - name: raw_mean
+    type: float
+  - name: raw_std
+    type: float
+  - name: raw_glcm_contrast_mean
+    type: float
+  - name: raw_glcm_contrast_std
+    type: float
+  - name: raw_glcm_dissimilarity_mean
+    type: float
+  - name: raw_glcm_dissimilarity_std
+    type: float
+  - name: raw_glcm_homogeneity_mean
+    type: float
+  - name: raw_glcm_homogeneity_std
+    type: float
+  - name: raw_glcm_ASM_mean
+    type: float
+  - name: raw_glcm_ASM_std
+    type: float
+  - name: raw_glcm_energy_mean
+    type: float
+  - name: raw_glcm_energy_std
+    type: float
+  - name: raw_glcm_correlation_mean
+    type: float
+  - name: raw_glcm_correlation_std
+    type: float
+
+  - name: entropy_mean
+    type: float
+  - name: entropy_std
+    type: float
+  - name: entropy_glcm_contrast_mean
+    type: float
+  - name: entropy_glcm_contrast_std
+    type: float
+  - name: entropy_glcm_dissimilarity_mean
+    type: float
+  - name: entropy_glcm_dissimilarity_std
+    type: float
+  - name: entropy_glcm_homogeneity_mean
+    type: float
+  - name: entropy_glcm_homogeneity_std
+    type: float
+  - name: entropy_glcm_ASM_mean
+    type: float
+  - name: entropy_glcm_ASM_std
+    type: float
+  - name: entropy_glcm_energy_mean
+    type: float
+  - name: entropy_glcm_energy_std
+    type: float
+  - name: entropy_glcm_correlation_mean
+    type: float
+  - name: entropy_glcm_correlation_std
+    type: float
+
+  - name: gaussian_mean
+    type: float
+  - name: gaussian_std
+    type: float
+  - name: gaussian_glcm_contrast_mean
+    type: float
+  - name: gaussian_glcm_contrast_std
+    type: float
+  - name: gaussian_glcm_dissimilarity_mean
+    type: float
+  - name: gaussian_glcm_dissimilarity_std
+    type: float
+  - name: gaussian_glcm_homogeneity_mean
+    type: float
+  - name: gaussian_glcm_homogeneity_std
+    type: float
+  - name: gaussian_glcm_ASM_mean
+    type: float
+  - name: gaussian_glcm_ASM_std
+    type: float
+  - name: gaussian_glcm_energy_mean
+    type: float
+  - name: gaussian_glcm_energy_std
+    type: float
+  - name: gaussian_glcm_correlation_mean
+    type: float
+  - name: gaussian_glcm_correlation_std
+    type: float
+
+  - name: sobel_mean
+    type: float
+  - name: sobel_std
+    type: float
+  - name: sobel_glcm_contrast_mean
+    type: float
+  - name: sobel_glcm_contrast_std
+    type: float
+  - name: sobel_glcm_dissimilarity_mean
+    type: float
+  - name: sobel_glcm_dissimilarity_std
+    type: float
+  - name: sobel_glcm_homogeneity_mean
+    type: float
+  - name: sobel_glcm_homogeneity_std
+    type: float
+  - name: sobel_glcm_ASM_mean
+    type: float
+  - name: sobel_glcm_ASM_std
+    type: float
+  - name: sobel_glcm_energy_mean
+    type: float
+  - name: sobel_glcm_energy_std
+    type: float
+  - name: sobel_glcm_correlation_mean
+    type: float
+  - name: sobel_glcm_correlation_std
+    type: float
+
+  - name: prewitt_mean
+    type: float
+  - name: prewitt_std
+    type: float
+  - name: prewitt_glcm_contrast_mean
+    type: float
+  - name: prewitt_glcm_contrast_std
+    type: float
+  - name: prewitt_glcm_dissimilarity_mean
+    type: float
+  - name: prewitt_glcm_dissimilarity_std
+    type: float
+  - name: prewitt_glcm_homogeneity_mean
+    type: float
+  - name: prewitt_glcm_homogeneity_std
+    type: float
+  - name: prewitt_glcm_ASM_mean
+    type: float
+  - name: prewitt_glcm_ASM_std
+    type: float
+  - name: prewitt_glcm_energy_mean
+    type: float
+  - name: prewitt_glcm_energy_std
+    type: float
+  - name: prewitt_glcm_correlation_mean
+    type: float
+  - name: prewitt_glcm_correlation_std
+    type: float
+
+  - name: gabor_real_mean
+    type: float
+  - name: gabor_real_std
+    type: float
+  - name: gabor_real_glcm_contrast_mean
+    type: float
+  - name: gabor_real_glcm_contrast_std
+    type: float
+  - name: gabor_real_glcm_dissimilarity_mean
+    type: float
+  - name: gabor_real_glcm_dissimilarity_std
+    type: float
+  - name: gabor_real_glcm_homogeneity_mean
+    type: float
+  - name: gabor_real_glcm_homogeneity_std
+    type: float
+  - name: gabor_real_glcm_ASM_mean
+    type: float
+  - name: gabor_real_glcm_ASM_std
+    type: float
+  - name: gabor_real_glcm_energy_mean
+    type: float
+  - name: gabor_real_glcm_energy_std
+    type: float
+  - name: gabor_real_glcm_correlation_mean
+    type: float
+  - name: gabor_real_glcm_correlation_std
+    type: float
+
+  - name: gabor_imag_mean
+    type: float
+  - name: gabor_imag_std
+    type: float
+  - name: gabor_imag_glcm_contrast_mean
+    type: float
+  - name: gabor_imag_glcm_contrast_std
+    type: float
+  - name: gabor_imag_glcm_dissimilarity_mean
+    type: float
+  - name: gabor_imag_glcm_dissimilarity_std
+    type: float
+  - name: gabor_imag_glcm_homogeneity_mean
+    type: float
+  - name: gabor_imag_glcm_homogeneity_std
+    type: float
+  - name: gabor_imag_glcm_ASM_mean
+    type: float
+  - name: gabor_imag_glcm_ASM_std
+    type: float
+  - name: gabor_imag_glcm_energy_mean
+    type: float
+  - name: gabor_imag_glcm_energy_std
+    type: float
+  - name: gabor_imag_glcm_correlation_mean
+    type: float
+  - name: gabor_imag_glcm_correlation_std
+    type: float
+
+  - name: hessian_mean
+    type: float
+  - name: hessian_std
+    type: float
+  - name: hessian_glcm_contrast_mean
+    type: float
+  - name: hessian_glcm_contrast_std
+    type: float
+  - name: hessian_glcm_dissimilarity_mean
+    type: float
+  - name: hessian_glcm_dissimilarity_std
+    type: float
+  - name: hessian_glcm_homogeneity_mean
+    type: float
+  - name: hessian_glcm_homogeneity_std
+    type: float
+  - name: hessian_glcm_ASM_mean
+    type: float
+  - name: hessian_glcm_ASM_std
+    type: float
+  - name: hessian_glcm_energy_mean
+    type: float
+  - name: hessian_glcm_energy_std
+    type: float
+  - name: hessian_glcm_correlation_mean
+    type: float
+  - name: hessian_glcm_correlation_std
+    type: float
+
+# Join key(s) for this feature set
+index_columns:
+  - name: image_id
+    type: string

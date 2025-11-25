@@ -1,0 +1,31 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+
+name: tumor_feature_selection
+version: 2
+display_name: Tumor Feature Selection (Baseline + GA)
+type: command
+
+inputs:
+  train_parquet:
+    type: uri_file
+
+outputs:
+  selected_features_json:
+    type: uri_file
+  baseline_metrics_json:
+    type: uri_file
+  ga_metrics_json:
+    type: uri_file
+
+code: ../src
+
+# Make sure this environment has `deap` installed.
+environment: azureml:lab5-ga-env:1
+
+
+command: >-
+  python feature_selection.py
+  --train_parquet ${{inputs.train_parquet}}
+  --selected_features_json ${{outputs.selected_features_json}}
+  --baseline_metrics_json ${{outputs.baseline_metrics_json}}
+  --ga_metrics_json ${{outputs.ga_metrics_json}}

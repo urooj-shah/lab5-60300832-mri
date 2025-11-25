@@ -1,0 +1,13 @@
+name: lab5-ga-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - pyarrow
+  - pip:
+      - deap
