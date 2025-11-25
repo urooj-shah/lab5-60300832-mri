@@ -7,7 +7,6 @@ on:
   workflow_dispatch:
 
 permissions:
-  id-token: write     # REQUIRED for OIDC login
   contents: read
 
 jobs:
@@ -28,12 +27,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install azure-ai-ml azure-identity joblib pandas numpy scikit-learn pillow
 
-      - name: Login to Azure using OIDC (service principal)
+      - name: Login to Azure using service principal (client secret)
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Run Azure ML training pipeline
         run: python src/pipeline_job.py
