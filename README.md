@@ -146,7 +146,7 @@ I used the Azure CLI to create:
       --resource-group rg-60300832 \
       --feature-store-name featurestore60300832
     ```
-    can i just mention here how it look 40 business days to find the write command for this and how many variations of feature-store-entity create i tried like i had the whole documentation page open trynna get this rigth.
+    can i just mention here how it look 40 business days to find the right command for this and how many variations of feature-store-entity create i tried like i had the whole documentation page open trynna get this rigth.
 2) The Feature Set (points to Phase 2 parquet):
     ```
     az ml feature-set create \
@@ -158,7 +158,7 @@ These registered both the Entity and the Feature Set.
 
 - Materialization (skipped ts)
 
-I attempted offline materialization backfill, but Azure blocked bc they got nothing better to do (permss issues). After discussion with the goat, Dr Oussama Djedidi, bro said verbatim "Wise ppl skip that ish" . I mean its just an optimization step, i jjust needed him to say that so i can move on. Literally every step after this went smoothly and this was just stupid but I understand we're trying to make use of the tool out there for us to use.
+I attempted offline materialization backfill, but Azure blocked bc they got nothing better to do (permss issues). After discussion with the goat, Dr Oussama Djedidi, bro said verbatim "Wise ppl skip that ish" . I mean its just an optimization step, i just needed him to say that so i can move on. Literally every step after this went smoothly and this was just stupid but I understand we're trying to make use of the tool out there for us to use.
 
 So Phase 4 proceeds normally without materialization.
 
@@ -273,13 +273,12 @@ Other than that Workflow is fully configured and ready to run once permissions a
 
 #### VI. Phase 6
 
-to be continued.... (absolutely not i am officially clocked out of this course if Big G uploads another version or fixes perm, I will not be continuing this lab I have done enough,  im on vacation in Diligafistan right now)
+to be continued.... (absolutely not i am officially clocked out of this course, if the All Knowing Cloud Professor uploads another version or fixes perm, I will not be continuing this lab I have done enough,  im on vacation in Diligafistan right now)
 
 ### Challenges
-#### AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+#### AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH. thank u.
 
 ### Conclusion
 
-This lab guided me through the full MLOps lifecycle for MRI tumor detection — from feature engineering and feature store integration to automated training pipelines and real-time deployment. I built a modular Azure ML pipeline with feature retrieval, baseline + GA feature selection, and final model training, and I successfully registered and packaged the trained model. I also set up a GitHub Actions workflow to automate retraining and deployment, with only role permissions blocking the final execution. Overall, the lab helped me understand how real-world ML systems are structured, automated, and deployed at scale using Azure’s MLOps tools. LETS GO AI KEEP WRITING ME THESE SICK CONCLUSIONS BC IC ANT BE BOTHERED 
-
+This lab guided me through the full MLOps lifecycle for MRI tumor detection — from feature engineering and feature store integration to automated training pipelines and real-time deployment. I built a modular Azure ML pipeline with feature retrieval, baseline + GA feature selection, and final model training, and I successfully registered and packaged the trained model. I also set up a GitHub Actions workflow to automate retraining and deployment, with only role permissions blocking the final execution. Overall, the lab helped me understand how real-world ML systems are structured, automated, and deployed at scale using Azure’s MLOps tools. 
 
